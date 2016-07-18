@@ -1,0 +1,91 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Snippit</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/snip">Snippits</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li role="menuitem"><a href="/signin" id="sign-in-btn">Sign In</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+<div class="jumbotron jumbobg">
+  <div class="container text-center">
+    <h1 id="company-name">Snippit</h1>
+    <p>Add Your Code Snippit Below</p>
+    <form method="POST" action="/">
+      <div class="form-group">
+        <input type="text" id="title" name="title" class="form-control" placeholder="Snippit Title." value="<%=@title%>">
+      </div>
+      <div class="form-group">
+        <select name="sniptype" class="form-control" id="sniptype">
+          <option value="Ruby">Ruby</option>
+          <option value="Javascript">Javascript</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="Rails">Rails</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea id="snippit" name="snippit" class="form-control" placeholder="Type your code here." rows="15"><%=@snip%></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Ruby</a>
+        </h4>
+      </div>
+      <!-- <%@sniptypedata.each do |x|%> -->
+      <!-- <%= x.title %> -->
+      <div id="collapse1" class="panel-collapse collapse">
+          <!-- <div class="panel-body"><%x.title%></div> -->
+        <div class="panel-body">
+          <table class="table table-striped">
+            <thread>
+              <th>Snippit Title</th>
+              <th>Snippit</th>
+              <th>Detail View</th>
+            </thread>
+            <tbody>
+              <% @sniptypedata.each do |c| %>
+                <tr>
+                  <td><%=c.title %></td>
+                  <td><%=c.snippit%></td>
+                  <td><a href="#" class="btn btn-primary">View Snippit</a></td>
+                </tr>
+              <%end%>
+            </tbody>
+          </table>
+        </div>
+            <!-- <div class="panel-body"><pre><code><%=CGI::escapeHTML(x.snippit)%></code></pre></div> -->
+      </div>
+      <!-- <%end%> -->
+    </div>
+  </div>
+</div>
+<div class="container" >
+  <% if @title != nil%>
+    <p><%=@title%></p>
+    <p><%=@sniptype%></p>
+    <pre><code><%=CGI::escapeHTML(@snip)%></code></pre>
+  <%end%>
+</div>

@@ -1,0 +1,58 @@
+.jumbotron{
+  padding-top: 60px;
+  /*background-image: url("http://www.intrawallpaper.com/static/images/cube-pattern-28617-2560x1600.jpg");*/
+  background-image: url("http://roderickfung.ca/wp-content/uploads/2016/03/IMG_6363-1.jpg");
+  background-size: 100% 100%;
+  /*background-blend-mode: color-burn;*/
+  color:#ffffff;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+#sign-in-btn {
+  color: #e6e6e6;
+}
+
+#sign-in-btn:hover {
+  background-color: #0F75D8;
+  color: #ffffff;
+}
+
+#snippit {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#sniptype {
+  width: 29%;
+  display: inline;
+  float: right;
+  margin-bottom: 10px;
+  max-width: 340px;
+}
+
+#title {
+  width: 69%;
+  display: inline;
+  float: left;
+  clear: left;
+  margin-bottom: 10px;
+  max-width: 840px;
+}
+
+pre {
+  /*white-space: pre-wrap*/
+  width: 69%;
+  display: inline;
+  float: left;
+  clear: left;
+  margin-bottom: 10px;
+  max-width: 840px;
+}
